@@ -1,0 +1,23 @@
+		body{
+			background-color: rgb(20, 20, 20);
+		}
+		@font-face {
+			font-family: Myfont2;
+			src: url(https://txc233.cn/font/FZHTJW.TTF);/*方正公司的方正黑体*/
+		}
+
+		.a {
+			font-size: 50px;
+			text-align: center;
+			width: 100%;
+			margin-top: 160px;
+			color: rgb(195, 195, 195);
+		}
+
+		.b {
+			font-size: 30px;
+			text-align: center;
+			width: 100%;
+			margin-top: 50px;
+			color: rgb(195, 195, 195);
+		}

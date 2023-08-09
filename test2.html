@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>自定义背景图</title>
+  <style>
+    body {
+      background-image: url('');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <h1>自定义背景图</h1>
+
+  <input type="file" id="upload" accept="image/*">
+  <p id="message"></p>
+
+  <script>
+    // 获取保存在cookie中的背景图位置
+    function getBackgroundImage() {
+      var backgroundImage = '';
+      var cookies = document.cookie.split(';');
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        if (cookie.indexOf('backgroundImage=') === 0) {
+          backgroundImage = cookie.substring('backgroundImage='.length, cookie.length);
+          break;
+        }
+      }
+      return backgroundImage;
+    }
+
+    // 设置背景图并保存在cookie中
+    function setBackgroundImage(imageUrl) {
+      document.body.style.backgroundImage = 'url("' + imageUrl + '")';
+      document.cookie = 'backgroundImage=' + imageUrl;
+    }
+
+    // 检查文件大小是否小于5MB
+    function checkFileSize(file) {
+      var maxSize = 5 * 1024 * 1024; // 5MB
+      return file.size <= maxSize;
+    }
+
+    // 监听文件上传事件
+    document.getElementById('upload').addEventListener('change', function(event) {
+      var file = event.target.files[0];
+      if (file && checkFileSize(file)) {
+        var reader = new FileReader();
+        reader.onload = function() {
+          setBackgroundImage(reader.result);
+        };
+        reader.readAsDataURL(file);
+        document.getElementById('message').textContent = '';
+      } else {
+        document.getElementById('message').textContent = '图片文件大小必须小于5MB';
+      }
+    });
+
+    // 页面加载时设置背景图
+    window.addEventListener('load', function() {
+      var backgroundImage = getBackgroundImage();
+      if (backgroundImage) {
+        document.body.style.backgroundImage = 'url("' + backgroundImage + '")';
+      }
+    });
+  </script>
+</body>
+</html>

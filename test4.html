@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      transition: transform 0.3s;
+    }
+
+    .box.animate {
+      transform-origin: center;
+      animation: qbounce 0.5s ease-in-out;
+    }
+
+    @keyframes qbounce {
+      0%, 100% {
+        transform: scale(1);
+      }
+      25% {
+        transform: scale(0.9);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      75% {
+        transform: scale(0.95);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box" onclick="animateBox()"></div>
+
+  <script>
+    function animateBox() {
+      var box = document.querySelector('.box');
+      box.classList.add('animate');
+	  console.info('别戳我>_<');
+
+      setTimeout(function() {
+        box.classList.remove('animate');
+      }, 500);
+    }
+  </script>
+</body>
+</html>

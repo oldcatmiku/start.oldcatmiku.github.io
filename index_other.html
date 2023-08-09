@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link REL="SHORTCUT ICON" HREF="Orange_Logo.png">
+	<link href="light.css" rel="stylesheet" type="text/css" id="ss" />
+	<script type="text/javascript" src="js.js"></script>
+	<title>黄橙起始页</title>
+</head>
+
+<body>
+		<div id='backgroundShadow' class="covers"></div>
+	<main id='windowsBackgroundAlpha'>
+		<!--时间显示-->
+			<div id="Date" class="a">Start</div>
+		<!--诗句-->
+			<p id="title" class="shiju">uwu</p>
+		<!--搜索栏-->
+			<div class="container">
+				<form id="bdfm" target="_blank" action="https://cn.bing.com/search" class="parent">
+					<input type="text" class="search" autocomplete="off" autofocus="autofocus" placeholder="搜索" id="search1" name="q">
+					<input type="submit" class="btn" id="search1" value="">
+				</form>
+			</div>
+	</main>		
+	
+	<!--下方版权-->	
+	<div class='nomain' onclick="animateBox()">	
+		<div id='copyright' class="textnomain">Loading...</div>
+	</div>
+
+	<!-- 弹窗元素 -->
+	<div id="overlay" class="overlay">
+		<div id="popup" class="popup">
+		<h2>这是一些设置</h2>
+		<p>关闭后会自动保存哒ww</p><br>
+			<div style="text-align: left;margin-left:5%">
+				<label>背景图的暗角大小：
+				<input type="range" id="slider01" min="-60" max="80" step="1" value="0" > <span id='vvalue'></span></label>
+				<br>
+				<label>窗口的不透明度：
+				<input type="range" id="slider02" min="0" max="50" step="1" value="0" > <span id='windowsBackgroundAlpha_value'></span></label>
+				<br>
+				<label for="checkbox">亮色背景：</label>
+				<input type="checkbox" id="checkbox" checked>
+				<br>
+				<br>
+			</div>
+				<a style="color:blue" onclick="resst()">恢复默认</a>
+				&emsp;&emsp;&emsp;
+				<a style="color:blue" onclick="otherThs()">杂七杂八的信息</a>
+
+				<div id='otherThsOut'></div>
+				<div id='moreThsOut'></div>
+		<span class="close-button" onclick="hidePopup()">&times;</span>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="settings.js"></script>
+</html>
