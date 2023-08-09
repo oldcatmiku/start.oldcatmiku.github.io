@@ -156,7 +156,7 @@ function otherThs(){
 	document.getElementById("otherThsOut").innerHTML=`<br>/* 这里是老猫的起始页 */<br><p style="text-align:left;word-break:break-all">这是老猫自建自用的起始页，每次打开都会出现一句诗或一言。这个项目从 2021 年开始开发，收集了一些优美诗句。如果您觉得要把什么设置加到起始页里，或是找到了一句很有意境的诗句，<del>也欢迎杂谈</del>，就发邮件给 oldcatmiku@qq.com，谢谢！<a style="color:blue" onclick="moreOther()">更多话</a></p><a style="color:blue" onclick="info()">日志消息</a>`;
 }
 function moreOther(){
-	document.getElementById("moreThsOut").innerHTML=`<br><p style="text-align:left;word-break:break-all">把访问地址修改成start.oldcatmiku.top，现在可以更加及时地更新项目，背景图片放进了图床。<del>不要问！！手机没有适配！！！</del>挖坑：自定义背景图和黑暗模式。<br>老猫的另一个网站：<a style="color:blue;text-decoration:none;" href="https://txc233.cn" target="_blank" >TXC团队主页</a><br>有个奇怪的东西：<a style="color:red" onclick="doNotTouch()">别点我</a></p>`
+	document.getElementById("moreThsOut").innerHTML=`<br><p style="text-align:left;word-break:break-all">已经把访问地址修改成start.oldcatmiku.top，现在可以更加及时地更新项目，背景图片放进了图床。<del>不要问！！手机没有适配！！！</del>挖坑：自定义背景图和黑暗模式。<br>老猫的另一个网站：<a style="color:blue;text-decoration:none;" href="https://txc233.cn" target="_blank" >TXC团队主页</a><br>有个奇怪的东西：<a style="color:red" onclick="doNotTouch()">别点我</a></p>`
 }
 function doNotTouch(){
 	body.style.transform="rotateY(180deg)";
