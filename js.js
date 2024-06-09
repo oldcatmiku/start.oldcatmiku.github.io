@@ -1,22 +1,22 @@
-		setInterval(function(){   
-        var date = new Date();   
-        var year = date.getFullYear();    //获取当前年份   
-        var mon = date.getMonth()+1;      //获取当前月份   
-        var da = date.getDate();          //获取当前日   
-        var day = date.getDay();          //获取当前星期几   
-        var h = date.getHours();          //获取小时   
-        var m = date.getMinutes();        //获取分钟   
-        var s = date.getSeconds();        //获取秒   
-        var d = document.getElementById('Date');
-		if (m < 10)
-		{var mm = "0"+m} 
-		else{mm=m}
+setInterval(function(){   
+    var date = new Date();   
+    var year = date.getFullYear();    //获取当前年份   
+    var mon = date.getMonth()+1;      //获取当前月份   
+    var da = date.getDate();          //获取当前日   
+    var day = date.getDay();          //获取当前星期几   
+    var h = date.getHours();          //获取小时   
+    var m = date.getMinutes();        //获取分钟   
+    var s = date.getSeconds();        //获取秒   
+    var d = document.getElementById('Date');
+    if (m < 10)
+    {var mm = "0"+m} 
+    else{mm=m}
 d.innerHTML= h+':'+mm;},1000)
 
 
 
 window.onload=function(){  
-var all = 46
+var all = 47
 tips = new Array(all);
 //条目内容 Ps:若您想要添加诗句，请发给chenzicongok@foxmail.com 注意查重<3
 tips[0]='「空山新雨后，天气晚来秋。」 〔唐〕王维'
@@ -65,36 +65,37 @@ tips[42]='「柴门闻犬吠，风雪夜归人。」 〔唐〕刘长卿'
 tips[43]='「水晶帘动微风起，满架蔷薇一院香。」 〔唐〕高骈'
 tips[44]='「月上柳梢头，人约黄昏后。」 〔宋〕欧阳修'
 tips[45]='「点一下右下角的框，会出现页面设置^^」 '
+tips[46]='「大事な人、忘れたくない人、忘れちゃダメな人！誰だ？誰だ？誰・・・誰だ！名前は！？」 瀧'
 //tips[99]='「Example」 〔唐〕Name'
 
 var radm
 radm = Math.floor(Math.random() * 2);
 
 if (radm == 1){
-	fetch('https://v1.hitokoto.cn')
-	.then(response => response.json())
-	.then(
-		data => {
-		const hitokoto = document.getElementById('title')
-		hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
-		if (data.length < 22){
-			if(data.from_who == null)
-				{data.from_who = "<br>"}
-			hitokoto.innerHTML = "<div class='shiju'>「"+data.hitokoto+ "」</div><div class='zhuozhe'>" + data.from_who+"</div>"
+fetch('https://v1.hitokoto.cn')
+.then(response => response.json())
+.then(
+    data => {
+    const hitokoto = document.getElementById('title')
+    hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+    if (data.length < 22){
+        if(data.from_who == null)
+            {data.from_who = "<br>"}
+        hitokoto.innerHTML = "<div class='shiju'>「"+data.hitokoto+ "」</div><div class='zhuozhe'>" + data.from_who+"</div>"
 
-			
-		}
-		else{
-			index = Math.floor(Math.random() * tips.length);
-			var getsj = tips[index];
-			var search = " ";
-			var pos = getsj.lastIndexOf(search);
-			var output = "<div class='shiju'>"+getsj.substring(0,pos) + "</div><div class='zhuozhe'>" + getsj.substring(pos)+"</div>"
-			document.getElementById("title").innerHTML= output;
-			}
-			})
-		.catch(console.error)
-		
+        
+    }
+    else{
+        index = Math.floor(Math.random() * tips.length);
+        var getsj = tips[index];
+        var search = " ";
+        var pos = getsj.lastIndexOf(search);
+        var output = "<div class='shiju'>"+getsj.substring(0,pos) + "</div><div class='zhuozhe'>" + getsj.substring(pos)+"</div>"
+        document.getElementById("title").innerHTML= output;
+        }
+        })
+    .catch(console.error)
+    
 }
 else{
 
@@ -118,80 +119,24 @@ console.info(
 
 const d = "https://bing.shangzhenyang.com/api";
 function l() {
-    window.open(d + "/1080p")
+window.open(d + "/1080p")
 }
 
 window.addEventListener("load", async()=>{
-    const o = document.getElementById("copyright");
-    if (o)
-        try {
-            const t = await fetch(d + "/json");
-            if (!t.ok)
-                throw new Error(t.status.toString());
-            const n = await t.json();
-            if (n) {
-                const i = n.images[0];
-                o.textContent = i.copyright
-            }
-        } catch (t) {
-            console.error(t),
-            t instanceof Error && (o.textContent = `Error: ${t.message}`)
+const o = document.getElementById("copyright");
+if (o)
+    try {
+        const t = await fetch(d + "/json");
+        if (!t.ok)
+            throw new Error(t.status.toString());
+        const n = await t.json();
+        if (n) {
+            const i = n.images[0];
+            o.textContent = i.copyright
         }
+    } catch (t) {
+        console.error(t),
+        t instanceof Error && (o.textContent = `Error: ${t.message}`)
+    }
 }
 );
-
-
-// var output = oStr.num(0-6) + oStr.num(6);
-// str.indexOf("a"); 
-// 
-
- 
-
-
-// #######  垃圾代码 ↓ ######
-
-// 	fetch('https://v1.hitokoto.cn?&c=i')
-//     .then(response => response.json())
-//     .then(data => {
-//       const hitokoto = document.getElementById('hitokoto_text')
-//       hitokoto.href = 'https://cn.bing.com/search?q=' + data.from
-//       hitokoto.innerHTML = data.hitokoto 
-//     })
-//     .catch(console.error)
-
-
-// 	fetch('https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN')
-//     .then(response => response.json())
-//     .then(data => {
-//       const hitokoto = document.getElementById('hitokoto_text')
-//     })
-//     .catch(console.error)
-
-// let format = 'js'
-// let idx = '0'
-// let n = '1'
-// let mkt = 'zh-CN'
-// let = options ={
-// }
-//  let imgUrl = '/proxy/' + 'HPImageArchive.aspx?' + `format=${format}&idx=${idx}&n=${n}&mkt=${mkt}`
-//  fetch(imgUrl,options).then(
-// 	data => { const copyright = document.getElementById('hitokoto_text')
-//     })
-
-
-// function cst() {
-// 	var date = new Date();
-// 	var h = date.getHours();
-// 	if  (h >= 19){						//如果是晚上切换白天
-// 	var obj = document.getElementById("ss");
-//    obj.setAttribute("href","light.css");
-// 	}
-// 	else if(h < 5){
-// 	var obj = document.getElementById("ss");
-//    obj.setAttribute("href","light.css");
-// 	}
-// 	else if(19 > h >= 5 ){
-// 	var obj = document.getElementById("ss");
-//    obj.setAttribute("href","dark.css");
-// 	}
-//  }

@@ -294,8 +294,7 @@ main::before {
 	background-position-x: -2px;
 	background-position-y: 4px;
 	background-size: 28px;
-	background-repeat-x: no-repeat;
-	background-repeat-y: no-repeat;
+	background-repeat: no-repeat;
 	background-attachment: initial;
 	background-origin: initial;
 	background-clip: initial;
