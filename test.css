@@ -1,6 +1,9 @@
-/* @font-face {
-	font-family: Myfont2;
-	src: url(https://txc233.cn/font/FZHTJW.TTF); 方正公司的方正黑体*/
+@font-face {
+    font-family: 'opposans'; 
+    src: url('OPPOSans-Regular-NumMin.ttf');
+}
+
+
 * {
 	margin: 0;
 	padding: 0;
@@ -17,7 +20,7 @@
 }
 
 .a {
-	font-family: Installer，expansiva，comforta，alt lautus thin，spin cycle，infinity，klavikaMedium-Italic，futura;
+	font-family: opposans;
 	font-size: 40px;
 	text-align: center;
 	margin-top: 3%;
@@ -37,7 +40,7 @@
 	/* line-height: 25px; */
 }
 
-body,
+/* body,
 main::before,
 .nomain::before,
 .search::before{
@@ -47,7 +50,7 @@ main::before,
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-}
+} */
 
 .covers {
 	position: absolute;
@@ -79,12 +82,12 @@ main {
 	right: 0;
 	width: 420px;
 	height: fit-content;
-	line-height: 1.2;
+	line-height: 1.4;
 	border-radius: 16.8px;
-	box-shadow: 3px 3px 6px 3px rgb(0 0 0 / 40%);
-	background-color: rgb(255 255 255 / 10%);
+	/* box-shadow: 3px 3px 6px 3px rgb(0 0 0 / 40%); */
+	/* background-color: rgb(255 255 255 / 10%); */
 	overflow: hidden;
-	margin-top: 150px;
+	margin-top: 140px;
 }
 
 main::before {
@@ -119,13 +122,17 @@ main::before {
 }
 
 .nomain {
+	padding-top: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
 	margin-right: 3%;
 	position: absolute;
 	/* top: 0; */
 	bottom: 0;
 	/* left: 0; */
 	right: 0;
-	width: 340px;
+	width: max-content;
 	height: auto;
 	/* line-height: 2; */
 	/* margin: auto; */
@@ -140,7 +147,7 @@ main::before {
       transform-origin: center;
       animation: qbounce 0.5s ease-in-out;
 }
-.nomain::before {
+/* .nomain::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -150,7 +157,7 @@ main::before {
 	filter: blur(20px);
 	z-index: -1;
 	margin: -30px;
-}
+} */
 .nomain.animate::before {
 	content: '';
 	position: absolute;
@@ -182,6 +189,7 @@ main::before {
 	margin-left: 3%;
 	margin-top: 2%;
 	margin-bottom: 2%;
+	
 }
 
 .container {
@@ -203,21 +211,32 @@ main::before {
 	height: 40px;
 	border-radius: 18px;
 	outline: none;
-	border: 1px solid rgba(255, 255, 255);
+	border: 1px solid rgb(0, 0, 0);
 	padding-left: 20px;
 	position: absolute;
 	background-color: rgba(255, 255, 255);
 }
 
 .shiju {
-	margin-top: 2%;
-	text-align: center;
-	font-family: Microsoft JhengHei UI, 等线, 宋体;
+    display: flex;
+    /* margin-top: 2%; */
+    text-align: left;
+    font-family: Microsoft JhengHei UI, 等线, 宋体;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
 }
-
+.poem{
+	display: flex;
+    /* margin-top: 2%; */
+    text-align: left;
+    font-family: Microsoft JhengHei UI, 等线, 宋体;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
 .zhuozhe {
-	margin-top: 0%;
-	margin-left: 185px;
+	/* margin: 3px; */
 	text-align: center;
 	font-family: Microsoft JhengHei UI, 等线, 宋体;
 }
@@ -294,8 +313,7 @@ main::before {
 	background-position-x: -2px;
 	background-position-y: 4px;
 	background-size: 28px;
-	background-repeat-x: no-repeat;
-	background-repeat-y: no-repeat;
+	background-repeat: no-repeat;
 	background-attachment: initial;
 	background-origin: initial;
 	background-clip: initial;
