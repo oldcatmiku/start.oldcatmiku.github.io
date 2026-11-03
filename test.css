@@ -219,7 +219,7 @@ main::before {
 
 .shiju {
     display: flex;
-    /* margin-top: 2%; */
+    /* margin: 10px 0px 10px 0px; */
     text-align: left;
     font-family: Microsoft JhengHei UI, 等线, 宋体;
     flex-direction: column;
@@ -323,4 +323,7 @@ main::before {
 	border: none;
 	outline: none;
 	cursor: pointer;
+}
+.time-separator {
+	vertical-align: 4px;	
 }

@@ -11,14 +11,13 @@ setInterval(function(){
     if (m < 10)
     {var mm = "0"+m} 
     else{mm=m}
-d.innerHTML= h+':'+mm;},1000)
+d.innerHTML= h+'<span class="time-separator">:</span>'+mm;},1000)
 
 
 
 window.onload=function(){  
 var all = 36
 tips = new Array(all);
-//条目内容 Ps:若您想要添加诗句，请发给chenzicongok@foxmail.com 注意查重<3
 tips[0] = '空山新雨后，天气晚来秋。<br>明月松间照，清泉石上流。 〔唐〕王维&nbsp;'
 tips[1] = '空山不见人，但闻人语响。<br>返景入深林，复照青苔上。 〔唐〕王维&nbsp;'
 tips[2] = '红豆生南国，春来发几枝。<br>愿君多采撷，此物最相思。 〔唐〕王维&nbsp;'

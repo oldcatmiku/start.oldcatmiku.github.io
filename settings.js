@@ -136,20 +136,20 @@ function resst(){
 		resbackgroundShadow = -60;		
 		themeColor = 0;		
 		resthemecolor = 0;
-		reswindowsBackgroundAlpha = 15;
+		reswindowsBackgroundAlpha = 0;
 	//滑块的复原
 		slider01.value= -60;	
 		document.getElementById("vvalue").innerText = -60;	
-		slider02.value=15;	
-		document.getElementById("windowsBackgroundAlpha_value").innerText = 15;
+		slider02.value=0;	
+		document.getElementById("windowsBackgroundAlpha_value").innerText = 0;
 	//样式复原
 		backgroundShadow.style.boxShadow = 'inset 0px 0px 127px -60px rgb(0,0,0)';		//改变css
 		checkbox.checked = true;
-		windowsBackgroundAlpha.style.background = 'rgb(255 255 255 / 15%)';		//改变css
+		windowsBackgroundAlpha.style.background = 'rgb(255 255 255 / 0%)';		//改变css
 	//保存至cookie
 		document.cookie = 'themeColor=' + '0' + ';' + 'expires=' + new_data.toUTCString();	//写入cookie
 		document.cookie = 'backgroundShadow=' + '-60' + ';' + 'expires=' + new_data.toUTCString();	//写入cookie
-		document.cookie = 'windowsBackgroundAlpha=' + '15' + ';' + 'expires=' + new_data.toUTCString();	//写入cookie
+		document.cookie = 'windowsBackgroundAlpha=' + '0' + ';' + 'expires=' + new_data.toUTCString();	//写入cookie
 }
 
 function otherThs(){
@@ -174,10 +174,37 @@ function doNotTouch(){
 
 //日志消息
 function info() {
-	alert(`第一天：研究了一中午的滑块，晚上实现了一个滑块。
-第二天：晚上把昨天的第二个滑块研究出来了。
-第三天：凌晨搞好了复选框。搞了一中午加入了弹窗并加入了废话。
-
-（第一天：2023/7/29）
+	alert(`（2023/7/29）
 `);
 }
+
+function darkMode(){
+	// 1. 获取当前时间
+	const now = new Date();
+	const hour = now.getHours();
+	const minute = now.getMinutes();
+	console.log('当前时间：' + hour + '时' + minute + '分');
+
+	// 2. 计算当前时间对应的分钟数，方便比较
+	const totalMinutes = hour * 60 + minute;
+
+	// 3. 设定深色模式的时间段（例如 19:00 ~ 06:59 之间）
+	const isNight = totalMinutes >= 19 * 60 || totalMinutes < 7 * 60;
+
+	// 4. 获取页面的样式表元素
+	const themeLink = document.getElementById('ss');
+	if (!themeLink) return;
+
+	// if (isNight){}
+		
+	if (isNight) {
+		themeLink.setAttribute('href', 'dark.css');
+		document.body.classList.add('dark-mode');
+	} else {
+		themeLink.setAttribute('href', 'test.css');
+		document.body.classList.remove('dark-mode');
+	}
+}
+
+// 页面加载完成后执行一次
+window.addEventListener('DOMContentLoaded', darkMode);
